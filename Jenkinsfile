@@ -19,5 +19,10 @@ pipeline {
                 sh 'docker images'
             }
         }
+	stage('Deploy') {
+   		steps {
+        	sh 'docker stack deploy -c docker-stack.yml mi_stack'
+    	    }
+        }
     }
 }
