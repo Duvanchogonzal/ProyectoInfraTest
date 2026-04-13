@@ -2,14 +2,7 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Duvanchogonzal/ProyectoInfraTest.git '
-            }
-        }
-
-        stage('Build App Image') {
+        stage('Build Backend Image') {
             steps {
                 sh 'docker build -t miapp:latest ./app'
             }
